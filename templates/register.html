@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Registration</title>
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Main CSS-->
+    <link href="{% static 'registration/css/main.css'%}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-dark p-t-100 p-b-50">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+                <div class="card-heading">
+                    <h2 class="title">Register</h2>
+                </div>
+                <div class="card-body">
+                    <form  method="post">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="name">Full name</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" name="full_name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Email address</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="email" name="email" placeholder="example@email.com">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Username</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" name="username">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Country code</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" name="countrycode">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Date of Birth</div>
+                            <div class="value">
+                                <input class="input--style-6" type="date" name="dob">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Phone Number</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" name="phone" placeholder="phone number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Bio</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="textarea--style-6" type="text" name="bio" placeholder="Enter bio">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Pin Code</div>
+                            <div class="value">
+                                <input class="input--style-6" type="number" name="pincode">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Address</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="textarea--style-6" type="text" name="address" placeholder="Enter full address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Gender</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" name="gender">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Password</div>
+                            <div class="value">
+                                <input class="input--style-6" type="password" name="password" placeholder="enter password">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Confirm Password</div>
+                            <div class="value">
+                                <input class="input--style-6" type="password" name="password1" placeholder="confirm password">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Upload Picture</div>
+                            <div class="value">
+                                <div class="input-group js-input-file">
+                                    <input class="input-file" type="file" name="img" id="file">
+                                    <label class="label--file" for="file">Choose file</label>
+                                    <span class="input-file__info">No file chosen</span>
+                                </div>
+                                <div class="label--desc">Upload your picture. Max file size 50 MB</div>
+                            </div>
+                        </div>
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div class="label--desc" role="alert">
+                            {{message}}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                            <div class="card-footer">
+                                <input class="btn btn--radius-2 btn--blue-2" type="submit">
+                            </div>
+
+                            <div class="card-footer">
+                                <a class="btn btn--radius-2 btn--blue-2"  href="../login">
+                                    Log in instead
+                                    <i  aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'registration/vendor/jquery/jquery.min.js'%}"></script>
+
+
+    <!-- Main JS-->
+    <script src="{% static 'registration/js/global.js'%}"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
